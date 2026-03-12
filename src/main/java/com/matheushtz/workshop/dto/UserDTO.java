@@ -13,10 +13,16 @@ public class UserDTO implements Serializable {
     public UserDTO() {
     }
 
+    // Construtor que recebe um User e inicializa os campos do UserDTO
     public UserDTO(User obj) {
         this.id = obj.getId();
         this.name = obj.getName();
         this.email = obj.getEmail();
+    }
+
+    // Método para converter um UserDTO em um User
+    public User fromDTO(UserDTO obj) {
+        return new User(obj.getId(), obj.getName(), obj.getEmail());
     }
 
     public String getId() {
